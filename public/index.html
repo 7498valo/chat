@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Chat</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="auth">
+      <h2>Login / Register</h2>
+      <input id="username" placeholder="username" />
+      <input id="password" type="password" placeholder="password" />
+      <div>
+        <button id="btnRegister">Register</button>
+        <button id="btnLogin">Login</button>
+      </div>
+      <div id="authError" class="error"></div>
+    </div>
+
+    <div id="chat" style="display:none;">
+      <div id="sidebar">
+        <div id="me"></div>
+        <h3>Channels</h3>
+        <ul id="channels"></ul>
+      </div>
+      <div id="main">
+        <div id="messages"></div>
+        <form id="msgForm">
+          <input id="msgInput" autocomplete="off" placeholder="Type a message..." />
+          <input type="file" id="fileInput" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
